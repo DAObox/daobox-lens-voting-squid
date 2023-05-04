@@ -1,0 +1,10 @@
+type Member @entity {
+  id: ID!
+  address: Bytes!
+  balance: BigInt!
+  votingWeight: BigInt!
+  delegate: Member
+  delegatedBy: [Member!]! @derivedFrom(field: "delegate")
+  lastUpdate: BigInt!
+}
+
